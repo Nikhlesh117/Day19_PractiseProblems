@@ -46,5 +46,8 @@ CREATE TABLE Orders
     Rating INT
 );
 
+INSERT INTO Orders (ProductName, Quantity, Rating)
+VALUES ('Product A', 5, 4), ('Product B', 3, 5), ('Product C', 2, 3);
+
 select * from Customer;
 select * from Orders;
