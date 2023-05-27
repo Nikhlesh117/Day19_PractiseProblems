@@ -28,4 +28,7 @@ UPDATE Customer SET Country = 'USA', Salary = 5000.00, Pincode = '12345' WHERE C
 UPDATE Customer SET Country = 'Canada', Salary = 4000.00, Pincode = '54321' WHERE CustomerId = 2;
 UPDATE Customer SET Country = 'UK', Salary = 6000.00, Pincode = '98765' WHERE CustomerId = 3;
 
+--UC5 Update table
+UPDATE Customer SET Phone = '9876543210', Address = 'New Address' WHERE CustomerName = 'John Doe';
+
 select * from Customer;
