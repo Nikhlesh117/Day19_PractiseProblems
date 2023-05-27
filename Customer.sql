@@ -37,4 +37,14 @@ SELECT Country, COUNT(*) AS NumberOfCustomers FROM Customer GROUP BY Country;
 --UC7 Aggregate Function
 SELECT MAX(Salary) AS MaxSalary, MIN(Salary) AS MinSalary, SUM(Salary) AS TotalSalary, AVG(Salary) AS AvgSalary FROM Customer;
 
+--UC8 Create Order Table
+CREATE TABLE Orders
+(
+    OrderId INT IDENTITY(1,1) PRIMARY KEY,
+    ProductName VARCHAR(255),
+    Quantity INT,
+    Rating INT
+);
+
 select * from Customer;
+select * from Orders;
