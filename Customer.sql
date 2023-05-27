@@ -38,16 +38,27 @@ SELECT Country, COUNT(*) AS NumberOfCustomers FROM Customer GROUP BY Country;
 SELECT MAX(Salary) AS MaxSalary, MIN(Salary) AS MinSalary, SUM(Salary) AS TotalSalary, AVG(Salary) AS AvgSalary FROM Customer;
 
 --UC8 Create Order Table
-CREATE TABLE Orders
+CREATE TABLE OrderTable
 (
     OrderId INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerId INT,
     ProductName VARCHAR(255),
     Quantity INT,
-    Rating INT
+    Rating INT,
+    CONSTRAINT FK_OrderTable_Customer FOREIGN KEY (CustomerId) REFERENCES Customer(CustomerId)
 );
 
-INSERT INTO Orders (ProductName, Quantity, Rating)
-VALUES ('Product A', 5, 4), ('Product B', 3, 5), ('Product C', 2, 3);
+INSERT INTO OrderTable (CustomerId, ProductName, Quantity, Rating)
+VALUES (1, 'Product A', 5, 4),
+       (2, 'Product B', 3, 5),
+       (1, 'Product C', 2, 3);
+
+
+--UC9 Join Table
+SELECT c.CustomerId, c.CustomerName, c.Phone, c.Address, o.OrderId, o.ProductName, o.Quantity, o.Rating
+FROM Customer c
+JOIN OrderTable o ON c.CustomerId = o.CustomerId;
 
 select * from Customer;
-select * from Orders;
+select * from OrderTable;
+
