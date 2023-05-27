@@ -34,4 +34,7 @@ UPDATE Customer SET Phone = '9876543210', Address = 'New Address' WHERE Customer
 --UC6 Number of customer in each country
 SELECT Country, COUNT(*) AS NumberOfCustomers FROM Customer GROUP BY Country;
 
+--UC7 Aggregate Function
+SELECT MAX(Salary) AS MaxSalary, MIN(Salary) AS MinSalary, SUM(Salary) AS TotalSalary, AVG(Salary) AS AvgSalary FROM Customer;
+
 select * from Customer;
