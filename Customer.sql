@@ -31,4 +31,7 @@ UPDATE Customer SET Country = 'UK', Salary = 6000.00, Pincode = '98765' WHERE Cu
 --UC5 Update table
 UPDATE Customer SET Phone = '9876543210', Address = 'New Address' WHERE CustomerName = 'John Doe';
 
+--UC6 Number of customer in each country
+SELECT Country, COUNT(*) AS NumberOfCustomers FROM Customer GROUP BY Country;
+
 select * from Customer;
